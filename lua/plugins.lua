@@ -11,7 +11,6 @@ packer.startup(function(use)
 
   -- theme
   use "EdenEast/nightfox.nvim"
-  -- use 'navarasu/onedark.nvim'
   -- use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' } }
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
@@ -19,9 +18,13 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'L3MON4D3/LuaSnip' -- Lua snippet
   use 'onsails/lspkind-nvim' -- vscode-like pictogram
+
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
+
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -36,6 +39,7 @@ packer.startup(function(use)
 
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+  use 'p00f/nvim-ts-rainbow' -- 괄호
 
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'nvim-telescope/telescope.nvim'
@@ -69,9 +73,7 @@ packer.startup(function(use)
   use 'mg979/vim-visual-multi' -- multi cursor
 
   -- single toggle term
-  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end }
+  use { "akinsho/toggleterm.nvim", tag = '*' }
 
   -- emmet
   use 'mattn/emmet-vim'

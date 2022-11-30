@@ -7,7 +7,6 @@ vim.opt.fileencoding = 'utf-8'
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.lazyredraw = true

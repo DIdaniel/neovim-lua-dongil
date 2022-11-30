@@ -74,7 +74,8 @@ nvim_lsp.flow.setup {
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+  -- filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
 }
@@ -111,6 +112,20 @@ nvim_lsp.tailwindcss.setup {
   capabilities = capabilities
 }
 
+nvim_lsp.html.setup {
+  on_attach = on_attach,
+  filetypes = { "html" },
+  init_options = {
+    configurationSection = { 'html', 'css', 'javascript', 'typescript' },
+    embeddedLanguages = {
+      css = true,
+      javascript = true,
+    },
+    provideFormatter = true
+  },
+  capabilities = capabilities
+}
+
 nvim_lsp.cssls.setup {
   on_attach = on_attach,
   capabilities = capabilities
@@ -129,6 +144,22 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   severity_sort = true,
 }
 )
+
+nvim_lsp.emmet_ls.setup({
+  -- on_attach = on_attach
+  capabilities = capabilities,
+  filetypes = {
+    'html', 'typescriptreact', 'javascriptreact', 'xml', 'xsl', 'pug', 'slim', 'css', 'sass', 'scss', 'less'
+  },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true
+      }
+    }
+  }
+})
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
