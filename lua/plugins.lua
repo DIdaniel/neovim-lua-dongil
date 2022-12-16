@@ -11,6 +11,7 @@ packer.startup(function(use)
 
   -- theme
   use "EdenEast/nightfox.nvim"
+  -- use 'bluz71/vim-nightfly-colors'
   -- use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' } }
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
@@ -51,6 +52,7 @@ packer.startup(function(use)
   -- prettier & lint
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
+  use 'MunifTanjim/eslint.nvim'
   -- use 'jayp0521/mason-null-ls.nvim' ----- After Masonㅓ
 
   -- GitSigns
@@ -71,6 +73,9 @@ packer.startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   use 'mg979/vim-visual-multi' -- multi cursor
+
+  -- Undo tree
+  use 'mbbill/undotree'
 
   -- single toggle term
   use { "akinsho/toggleterm.nvim", tag = '*' }

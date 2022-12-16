@@ -48,3 +48,6 @@ keymap.set("v", "<leader>d", "\"_d")
 
 -- NvimTreeToggle
 keymap.set('n', '<Leader>e', ':NvimTreeToggle<cr>')
+
+-- Undo Tree
+keymap.set("n", "<Leader>u", "<Cmd>UndotreeToggle<CR>")

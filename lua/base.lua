@@ -52,3 +52,9 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+
+-- Remember history
+vim.opt.history = 100
+
+-- Faster scrolling
+vim.opt.lazyredraw = true
